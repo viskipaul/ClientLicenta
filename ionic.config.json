@@ -1,0 +1,7 @@
+{
+  "name": "OCRClient",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}
