@@ -1,0 +1,32 @@
+.image{
+    width: 100%;
+}
+
+.photo-card{
+    width: 50%;
+    margin: auto;
+    margin-top: 10px;
+    padding: 10px;
+}
+
+.response-card{
+    width: 50%;
+    margin: auto;
+    padding: 10px;
+    margin-top: 15px;
+    font-size: x-large;
+}
+
+.solution-label{
+    font-size: large;
+    display: block;
+    margin: 5px;
+}
+
+.response-div{
+    margin-bottom: 10px;   
+}
+
+.response-content{
+    margin-bottom: 150px;
+}
