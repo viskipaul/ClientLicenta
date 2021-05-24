@@ -52,7 +52,7 @@ export function usePhotoGallery() {
   }
 
   return {
-    photos: photo,
+    photo,
     takePhoto,
     loading,
     response,

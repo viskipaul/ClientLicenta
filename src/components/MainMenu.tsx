@@ -22,7 +22,7 @@ import {
   import './mainmenustyle.css';
   
   const MainMenu: React.FC = () => {
-    const { photos, takePhoto, loading, response, failed, errorMessage, solution } = usePhotoGallery();
+    const { photo, takePhoto, loading, response, failed, errorMessage, solution } = usePhotoGallery();
 
     var rows = []
     for(var i = 0; i < response.length; i++){
@@ -40,10 +40,8 @@ import {
 
     return (
         <IonContent className="main-content">
-          {photos.length != 0 && <IonCard className="photo-card">
-            {photos && photos.map((photo, index) => (
-              <IonImg key="photo.webviewPath" className="image" src={photo.webviewPath}/>
-            ))}
+          {photo != null && <IonCard className="photo-card">
+            <IonImg key="photo.webviewPath" className="image" src={photo.webviewPath}/>
           </IonCard>}
           <div className="response-content">
             {rows}
