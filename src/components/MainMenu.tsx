@@ -28,10 +28,13 @@ import {
     for(var i = 0; i < response.length; i++){
       rows.push(
         <div className="response-div">
-          {response[0][0] && <IonCard key={'resCard' + i} className="response-card">Equation: {response[i]}</IonCard>}
+          {response[0][0] && 
+          <IonCard key={'resCard' + i} className="response-card">Equation: 
+              {response[i]}
+          </IonCard>}
           {solution[i] && solution[i][0] && <IonCard key={'solCard' + i} className="response-card">
           {solution[i] && solution[i].map((sol) => (
-            <IonLabel key={'solLabel' + i} className="solution-label">{sol}</IonLabel>
+            <IonLabel key={'solLabel' + i + '-' + Math.floor(Math.random() * 1000)} className="solution-label">{sol}</IonLabel>
           ))}
           </IonCard>}
         </div>
@@ -40,7 +43,7 @@ import {
 
     return (
         <IonContent className="main-content">
-          {photo != null && <IonCard className="photo-card">
+          {photo != null && <IonCard key="photo-card" className="photo-card">
             <IonImg key="photo.webviewPath" className="image" src={photo.webviewPath}/>
           </IonCard>}
           <div className="response-content">
