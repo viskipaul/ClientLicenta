@@ -11,7 +11,7 @@ const MainPage: React.FC = () => {
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>Math equation solver through OCR</IonTitle>
+          <IonTitle>QuickMath - Math equations solver through OCR</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent><MainMenu></MainMenu></IonContent>

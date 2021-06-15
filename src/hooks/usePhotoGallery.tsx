@@ -18,6 +18,7 @@ export function usePhotoGallery() {
   const [failed, setFailed] = useState<boolean>(false);
   const [errorMessage, setErrorMessage] = useState();
   const [solution, setSolution] = useState([[]]);
+  const [plots, setPlots] = useState([]);
   const history = useHistory();
 
   const takePhoto = async () => {
@@ -42,10 +43,17 @@ export function usePhotoGallery() {
     const base64Data = await base64FromPath(photo.webPath!);
     formData.append('image', base64Data);
     axios.post('http://192.168.0.166:5000/upload', formData, {headers: {'Content-Type': 'multipart/form-data'}}).then(res => {
-      setFailed(false); console.log(res); setLoading(false); setResponse(res.data.message); setSolution(res.data.solution);
+      setFailed(false); console.log(res); 
+      setLoading(false); 
+      setResponse(res.data.message); 
+      setSolution(res.data.solution);
+      setPlots(res.data.plot);
+      console.log("RES DATA PLOT: ", res.data.plot)
+      console.log("PLOTS: ", plots);
     }).catch(err => {
       setResponse([[]]);
       setSolution([[]]);
+      setPlots([]);
       setFailed(true);
       setLoading(false);
     });
@@ -58,6 +66,7 @@ export function usePhotoGallery() {
     response,
     failed,
     errorMessage,
-    solution
+    solution,
+    plots
   };
 }
